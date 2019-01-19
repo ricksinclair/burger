@@ -17,6 +17,9 @@ var orm = {
 
   insertOne: function(burger_name, devoured){
       var queryString = "USE burgers_db INSERT INTO burgers (burger_name, devoured) VALUES ()
+  },
+  updateOne: function(){
+      
   }
 };
 
