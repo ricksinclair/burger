@@ -8,11 +8,15 @@ var connection = require("./connection.js");
 // https://en.wikipedia.org/wiki/SQL_injection
 var orm = {
   selectAll: function() {
-    var queryString = " USE burgers_db  SELECT * FROM burgers";
+    var queryString = "USE burgers_db  SELECT * FROM burgers";
     connection.query(queryString, function(err, result) {
       if (err) throw err;
       console.log(result);
     });
+  },
+
+  insertOne: function(burger_name, devoured){
+      var queryString = "USE burgers_db INSERT INTO burgers (burger_name, devoured) VALUES ()
   }
 };
 
