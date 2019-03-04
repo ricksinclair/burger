@@ -1,8 +1,10 @@
+//
 let express = require("express");
 let bodyParser = require("body-parser");
 let methodOverride = require("method-override");
 let exphbs = require("express-handlebars");
 let app = express();
+//Allows to run on localhost and Heroku
 let PORT = process.env.PORT || 3000;
 let routes = require("./controllers/routes.js");
 
