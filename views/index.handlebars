@@ -1,13 +1,14 @@
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center d-flex">
         <div class="col-xs-12 text-center" id="top-bar">
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Burger.svg"></img>
             <h1>EAT DA BURGER!</h1>
 
         </div>
     </div>
-    <div class="col-xs-6 text-center" class="task">
-        <div class="row">
+    <div class="row justify-content-center d-flex">
+
+        <div class="col-3 text-center" class="task">
             {{#each burger_data}}
             {{#unless this.devoured}}
 
@@ -27,32 +28,31 @@
             {{/each}}
         </div>
 
-    </div>
-
-    <div class="col-xs-6 text-center task">
-        {{#each burger_data}}
-        {{#if this.devoured}}
-        <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly />
-        {{/if}}
-        {{/each}}
-    </div>
-
-</div>
-</div>
 
 
-<div class="container">
+        <div class=" col-3">
 
-    <div class="row">
+            <div class="col-xs-12 text-center enter_selection">
+                <form action="/burgers/create" method="POST">
+                    <input type="text" name="burger_name" class="form-control" value="" id="enter_text" />
+                    <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
 
-        <div class="col-xs-12 text-center enter_selection">
-            <form action="/burgers/create" method="POST">
-                <input type="text" name="burger_name" class="form-control" value="" id="enter_text" />
-                <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
+                </form>
 
-            </form>
-
+            </div>
+            <p>Enter your favorite burger into the database</p>
         </div>
-        <p>Enter your favorite burger into the database</p>
+
+        <div class="col-3 text-center task">
+            {{#each burger_data}}
+            {{#if this.devoured}}
+            <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly />
+            {{/if}}
+            {{/each}}
+        </div>
     </div>
+
 </div>
+</div>
+
+<br />
