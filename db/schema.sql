@@ -10,7 +10,7 @@ CREATE TABLE burgers
 
     burger_name VARCHAR
     (100) NOT NULL,
-    devoured BOOLEAN NOT NULL,
+    devoured BOOLEAN NOT NULL DEFAULT FALSE,
     PRIMARY KEY
     (id)
 
